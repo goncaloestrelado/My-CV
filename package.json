@@ -11,7 +11,7 @@
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.2.1",
     "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.11",
+    "@types/node": "^18.19.121",
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.10",
     "@types/react-icons": "^3.0.0",
