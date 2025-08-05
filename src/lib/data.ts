@@ -5,8 +5,8 @@ export const PROJECTS: Array<ProjectType> = [
     id: "x8y4z",
     dateSince: "2023-09-25T22:38:12",
     isFinished: false,
-    thumbnail: "/images/ge-shop.png",
-    title: "GE SHOP",
+    thumbnail: "/images/amigo-shop-thumb.png",
+    title: "AMIGO SHOP",
     subTitle: "E-commerce website",
     description:
       "Shop with the best products available today! As a Front End Developer, I'm devoted to creating a user-friendly interface and ensuring a reliable platform through performance optimization. This project is a personal quest for knowledge and skill development, aiming to explore the intricacies of web development and e-commerce. It's all about hands-on learning, experimenting with the latest technologies, and fine-tuning my front-end development skills. Join me as we delve into the world of online shopping, not just as consumers, but as developers eager to grow and master our craft!",
@@ -44,6 +44,50 @@ export const PROJECTS: Array<ProjectType> = [
     ],
     github: "https://github.com/ST4R20RD/ge-shop",
     live: "https://ge-shop.netlify.app/",
+  },
+  {
+    id: "d5a2h",
+    dateSince: "2025-01-15T10:30:00",
+    isFinished: true,
+    thumbnail: "/images/data-dashboard-thumb.png",
+    title: "Analytics Dashboard",
+    subTitle: "Professional Cryptocurrency Data Visualization Platform",
+    description:
+      "A comprehensive, real-time cryptocurrency analytics dashboard built with modern web technologies. This project demonstrates advanced data visualization, responsive design principles, and professional UI/UX patterns. Features include live market data integration, multiple interactive chart types (line, bar, pie, area), dark/light theme switching, and mobile-responsive design. The application provides real-time cryptocurrency tracking for Bitcoin, Ethereum, Solana, and Dogecoin with historical price analysis, market trends, and portfolio insights. Built with performance optimization, smooth animations, and accessibility in mind.",
+    techs: [
+      {
+        name: "ReactJS",
+        color: "#61DAFB",
+        link: "https://reactjs.org/",
+      },
+      {
+        name: "TypeScript",
+        color: "#3178C6",
+        link: "https://www.typescriptlang.org/",
+      },
+      {
+        name: "Tailwind CSS",
+        color: "#06B6D4",
+        link: "https://tailwindcss.com/",
+      },
+      {
+        name: "Recharts",
+        color: "#8884D8",
+        link: "https://recharts.org/",
+      },
+      {
+        name: "CoinGecko API",
+        color: "#8DC647",
+        link: "https://www.coingecko.com/api",
+      },
+      {
+        name: "Headless UI",
+        color: "#66E3FF",
+        link: "https://headlessui.com/",
+      },
+    ],
+    github: "https://github.com/goncaloestrelado/data-dashboard",
+    live: "",
   },
   /* {
     dateSince: "2022-08-26T22:38:12",
@@ -121,7 +165,7 @@ export const PROJECTS: Array<ProjectType> = [
     github: "https://github.com/ST4R20RD/whatsapp-clone",
     live: "https://whatsgood-gnestrelado.netlify.app/",
   },
-  {
+  /* {
     id: "a3b1d",
     dateSince: "2022-04-09T11:20:48",
     isFinished: true,
@@ -168,7 +212,7 @@ export const PROJECTS: Array<ProjectType> = [
       },
     ],
     github: "https://github.com/RaAlMer/Nani-frontend",
-  },
+  }, */
   /* {
     dateSince: "2021-12-14T17:37:19",
     isFinished: true,
