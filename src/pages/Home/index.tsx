@@ -43,7 +43,7 @@ export function Home() {
             <InnerLine className="bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
           </Underline>
           <JobPosition>
-            <p className="text-xl font-bold">Front End Developer</p>
+            <p className="text-xl font-bold">FullStack Developer</p>
           </JobPosition>
         </Name>
       </Presentation>
