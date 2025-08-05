@@ -226,4 +226,43 @@ export const PROJECTS: Array<ProjectType> = [
     live: "https://penalty-shootout.netlify.app/",
   },
  */
+  {
+    id: "cof-2025", // Unique identifier
+    dateSince: "2025-01-01T00:00:00", // Estimated project start date
+    isFinished: true, // Project appears complete with full functionality
+    thumbnail: "/images/circleOfFifths-thumb.png", // Using the React logo from public folder
+    title: "Circle of Fifths", // From package.json and README
+    subTitle: "Interactive Music Theory Explorer", // Based on the app's functionality
+    description:
+      "An interactive Circle of Fifths application built with React that helps musicians explore scales and keys through an intuitive interface. Features clickable key selection, scale visualization with proper sharps and flats, educational tools for understanding musical relationships, and responsive design for all devices.",
+    techs: [
+      {
+        name: "React",
+        color: "#61DAFB",
+        link: "https://reactjs.org/",
+      },
+      {
+        name: "Bootstrap",
+        color: "#7952B3",
+        link: "https://getbootstrap.com/",
+      },
+      {
+        name: "JavaScript",
+        color: "#F7DF1E",
+        link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+      },
+      {
+        name: "CSS3",
+        color: "#1572B6",
+        link: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+      },
+      {
+        name: "HTML5",
+        color: "#E34F26",
+        link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
+      },
+    ],
+    github: "https://github.com/ST4R20RD/proj-acordes", // From package.json repository field
+    live: "https://circlefifths.netlify.app/",
+  },
 ];
