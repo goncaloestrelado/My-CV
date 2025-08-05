@@ -87,7 +87,7 @@ export const PROJECTS: Array<ProjectType> = [
       },
     ],
     github: "https://github.com/goncaloestrelado/data-dashboard",
-    live: "",
+    live: "https://cryptodatadashboard.netlify.app/",
   },
   /* {
     dateSince: "2022-08-26T22:38:12",
