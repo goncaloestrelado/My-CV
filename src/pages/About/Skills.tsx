@@ -44,7 +44,6 @@ const darkThemeStyles = css`
 const Container = styled.div``;
 const Wrapper = styled.div<{ lightMode: boolean }>`
   ${({ lightMode }) => (lightMode ? darkThemeStyles : lightThemeStyles)}
-  height: 100%;
   border-radius: 30px;
   display: flex;
   justify-content: space-between;
