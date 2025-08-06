@@ -1,7 +1,7 @@
 {
   "short_name": "Gonçalo Estrelado",
-  "name": "Gonçalo Estrelado Portfolio",
-  "description": "Explore Gonçalo Estrelado's Portfolio.",
+  "name": "Gonçalo Estrelado - Frontend Developer Portfolio",
+  "description": "Frontend developer portfolio by Gonçalo Estrelado – built with React, TypeScript, and clean design.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -22,5 +22,7 @@
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "categories": ["business", "productivity"],
+  "lang": "en"
 }
