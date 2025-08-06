@@ -1,7 +1,6 @@
 import { useLocation } from "react-router-dom";
 import styled, { css, keyframes } from "styled-components";
 import MenuItem from "./MenuItem";
-import { Toggle } from "./Toggle";
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 
@@ -16,7 +15,7 @@ interface Props {
 export default function MenuItems({ isOpen, setIsOpen, isMobile }: Props) {
   const location = useLocation();
   const pathname = location.pathname.slice(1);
-  const { lightMode, toggleTheme } = useContext(ThemeContext);
+  const { lightMode } = useContext(ThemeContext);
 
   return (
     <Container lightMode={lightMode} isOpen={isOpen}>

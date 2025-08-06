@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { EducationCard } from "./EducationCard";
 import { Skills } from "./Skills";
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
