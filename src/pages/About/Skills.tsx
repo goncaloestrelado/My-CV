@@ -41,16 +41,68 @@ const darkThemeStyles = css`
   background: linear-gradient(180deg, rgba(141, 141, 141, 0) 0%, rgba(141, 141, 141, 0.2) 100%);
 `;
 
-const Container = styled.div``;
+const Container = styled.div`
+  width: 100%;
+  padding: 0 1rem;
+
+  @media (max-width: 768px) {
+    padding: 0 0.5rem;
+  }
+`;
 const Wrapper = styled.div<{ lightMode: boolean }>`
   ${({ lightMode }) => (lightMode ? darkThemeStyles : lightThemeStyles)}
   border-radius: 30px;
   display: flex;
-  justify-content: space-between;
-  align-items: stretch;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
   font-size: 3rem;
 
+  /* Desktop and larger screens */
+  @media (min-width: 1200px) {
+    font-size: 3.5rem;
+    gap: 20px;
+    padding: 25px;
+  }
+
+  /* Tablets and medium screens */
+  @media (max-width: 1024px) {
+    font-size: 2.5rem;
+    gap: 12px;
+    padding: 18px;
+  }
+
+  /* Small tablets */
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    gap: 10px;
+    padding: 15px;
+    border-radius: 20px;
+  }
+
+  /* Mobile phones */
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 15px;
+  }
+
+  /* Very small screens */
+  @media (max-width: 320px) {
+    font-size: 1.2rem;
+    gap: 6px;
+    padding: 10px;
+  }
+
   & > * {
-    margin: 10px;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 `;

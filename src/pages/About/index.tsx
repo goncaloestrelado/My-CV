@@ -10,51 +10,52 @@ export function About() {
   return (
     <Container>
       <Wrapper lightMode={lightMode}>
-        <SkillsSection>
-          <SectionTitle>Technical Skills</SectionTitle>
-          <Skills />
-        </SkillsSection>
+        <WrapperInner lightMode={lightMode}>
+          <SkillsSection>
+            {/* <SectionTitle>Technical Skills</SectionTitle> */}
+            <Skills />
+          </SkillsSection>
 
-        <ContentSection>
-          <ProfileSection className="space-y-5">
-            <ProfilePic
-              src="images/GonçaloEstrelado.png"
-              alt="Gonçalo Estrelado - FullStack Developer"
-              loading="lazy"
-            />
-            <RoleTitle>FullStack Developer</RoleTitle>
-            {/* <EducationCard /> */}
-            <ContactInfo>
-              <InfoItem>📍 Portugal</InfoItem>
-            </ContactInfo>
-          </ProfileSection>
+          <ContentSection>
+            <ProfileSection className="space-y-5">
+              <ProfilePic
+                src="images/GonçaloEstrelado.png"
+                alt="Gonçalo Estrelado - FullStack Developer"
+                loading="lazy"
+              />
+              <RoleTitle>FullStack Developer</RoleTitle>
+              <ContactInfo>
+                <InfoItem>📍 Portugal</InfoItem>
+              </ContactInfo>
+            </ProfileSection>
 
-          <TextSection>
-            <SectionTitle>About Me</SectionTitle>
-            <AboutText>
-              Full-stack developer focused on building web applications with the MERN stack. I enjoy creating smooth
-              user experiences that work across all devices.
-            </AboutText>
+            <TextSection>
+              <SectionTitle>About Me</SectionTitle>
+              <AboutText>
+                Full-stack developer focused on building web applications with the MERN stack. I enjoy creating smooth
+                user experiences that work across all devices.
+              </AboutText>
 
-            <AboutText>
-              I turn ideas into working applications, with experience spanning from database design to deployment.
-            </AboutText>
+              <AboutText>
+                I turn ideas into working applications, with experience spanning from database design to deployment.
+              </AboutText>
 
-            <AboutText>My toolkit:</AboutText>
+              <AboutText>My toolkit:</AboutText>
 
-            <SkillsList>
-              <SkillItem>Frontend: React, TypeScript, HTML5, CSS3, Sass, Tailwind CSS</SkillItem>
-              <SkillItem>Backend: Node.js, Express.js, MongoDB, Firebase</SkillItem>
-              <SkillItem>Tools: Git, GitHub, npm, Figma, VS Code</SkillItem>
-              <SkillItem>Focus: Responsive design, component architecture</SkillItem>
-            </SkillsList>
+              <SkillsList>
+                <SkillItem>Frontend: React, TypeScript, HTML5, CSS3, Sass, Tailwind CSS</SkillItem>
+                <SkillItem>Backend: Node.js, Express.js, MongoDB, Firebase</SkillItem>
+                <SkillItem>Tools: Git, GitHub, npm, Figma, VS Code</SkillItem>
+                <SkillItem>Focus: Responsive design, component architecture</SkillItem>
+              </SkillsList>
 
-            <AboutText>
-              I work well in teams and enjoy solving complex problems. Always learning new technologies and staying
-              current with best practices.
-            </AboutText>
-          </TextSection>
-        </ContentSection>
+              <AboutText>
+                I work well in teams and enjoy solving complex problems. Always learning new technologies and staying
+                current with best practices.
+              </AboutText>
+            </TextSection>
+          </ContentSection>
+        </WrapperInner>
       </Wrapper>
     </Container>
   );
@@ -66,27 +67,61 @@ const Container = styled.div`
   justify-content: flex-start;
   align-items: center;
   min-height: 100vh;
-  padding: 2rem 1rem;
+  padding: 20px;
+  margin-top: 50px;
 `;
 
 const Wrapper = styled.div<{ lightMode: boolean }>`
+  position: relative;
+  overflow: hidden;
+  padding: 1px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: ${({ lightMode }) =>
-    lightMode
-      ? "linear-gradient(180deg, rgba(141, 141, 141, 0) 0%, rgba(141, 141, 141, 0.1) 100%)"
-      : "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.2) 100%)"};
-  padding: 2rem;
   border-radius: 30px;
   margin: 1rem 0;
   max-width: 1200px;
   width: 100%;
+
+  @media (max-width: 768px) {
+    border-radius: 20px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -1000%;
+    background: conic-gradient(from 90deg at 50% 50%, #0ea5e9 0%, #6366f1 50%, #0ea5e9 100%);
+    animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+`;
+
+const WrapperInner = styled.div<{ lightMode: boolean }>`
+  background: ${({ lightMode }) => (lightMode ? "#020617" : "#f8fafc")};
+  padding: 2rem;
+  border-radius: 30px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 3rem;
 
   @media (max-width: 768px) {
     padding: 1.5rem;
     gap: 2rem;
+    border-radius: 20px;
   }
 `;
 
