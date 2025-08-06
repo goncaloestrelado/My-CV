@@ -2,14 +2,13 @@ import styled, { css } from "styled-components";
 import { FiGithub, FiMail } from "react-icons/fi";
 import { FaLinkedinIn } from "react-icons/fa";
 import { useLocation } from "react-router";
-import { Toggle } from "../Header/Toggle";
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 
 export function Footer() {
   const location = useLocation();
   const pathname = location.pathname;
-  const { lightMode, toggleTheme } = useContext(ThemeContext);
+  const { lightMode } = useContext(ThemeContext);
   return (
     <Container lightMode={lightMode}>
       <Wrapper>
