@@ -60,4 +60,7 @@ const Container = styled.section<{ lightMode: boolean }>`
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
+  @media (min-width: 768px) {
+    height: 200vh;
+  }
 `;
