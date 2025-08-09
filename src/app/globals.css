@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Anta loaded via next/font (see lib/fonts.ts) */
+
+/* Local custom font (TAModernTimes) migrated from CRA public/fonts */
+@font-face {
+  font-family: "TAModernTimes";
+  src: url("/fonts/tural-alisoy-tamoderntimes/TAModernTimes-RoundedExtLt.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  h1 {
+    font-family: var(--font-anta), sans-serif;
+    font-weight: 400;
+  }
+  .font-modernTimes {
+    font-family: "TAModernTimes", var(--font-anta), sans-serif;
+    font-weight: 300;
+  }
+}
+
+button {
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f100;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(55, 55, 55, 0.692);
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

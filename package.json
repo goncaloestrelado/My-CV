@@ -1,0 +1,48 @@
+{
+  "name": "goncalo-estrelado-cv-nextjs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Gonçalo Estrelado's professional portfolio built with Next.js",
+  "author": "Gonçalo Estrelado",
+  "keywords": [
+    "portfolio",
+    "cv",
+    "next.js",
+    "react",
+    "typescript",
+    "web developer"
+  ],
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@tsparticles/engine": "^3.9.1",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.9.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.23.12",
+    "mini-svg-data-uri": "^1.4.4",
+    "next": "15.4.6",
+    "postcss": "^8.5.6",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-icons": "^5.5.0",
+    "react-responsive": "^10.0.1",
+    "simplex-noise": "^4.0.3",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9",
+    "eslint-config-next": "15.4.6",
+    "typescript": "^5"
+  }
+}
