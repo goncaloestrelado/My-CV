@@ -1,5 +1,6 @@
+"use client";
+
 import { useState, useEffect } from "react";
-import styled from "styled-components";
 import { useMediaQuery } from "react-responsive";
 import { FaBars } from "react-icons/fa";
 import MenuItems from "./MenuItems";
@@ -13,26 +14,11 @@ export default function Menu() {
   }, [isMobile]);
 
   return (
-    <MenuContainer>
-      <MenuButton onClick={() => setIsOpen(!isOpen)}>
+    <div className="flex items-center">
+      <div className="hidden max-[425px]:block z-10 cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
         <FaBars />
-      </MenuButton>
+      </div>
       <MenuItems isOpen={isOpen} setIsOpen={setIsOpen} isMobile={isMobile} />
-    </MenuContainer>
+    </div>
   );
 }
-const MenuButton = styled.div``;
-
-const MenuContainer = styled.div`
-  display: flex;
-  align-items: center;
-  ${MenuButton} {
-    display: none;
-  }
-  @media (max-width: 425px) {
-    ${MenuButton} {
-      display: block;
-      z-index: 10;
-    }
-  }
-`;

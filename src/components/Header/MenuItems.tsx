@@ -1,8 +1,9 @@
-import { useLocation } from "react-router-dom";
-import styled, { css, keyframes } from "styled-components";
+"use client";
+
+import { usePathname } from "next/navigation";
+import { clsx } from "clsx";
 import MenuItem from "./MenuItem";
-import { useContext } from "react";
-import { ThemeContext } from "../../context/ThemeContext";
+import { useTheme } from "@/context/ThemeContext";
 
 const LINKLIST = ["Projects", "About", "Contact"];
 
@@ -13,89 +14,42 @@ interface Props {
 }
 
 export default function MenuItems({ isOpen, setIsOpen, isMobile }: Props) {
-  const location = useLocation();
-  const pathname = location.pathname.slice(1);
-  const { lightMode } = useContext(ThemeContext);
+  const pathname = usePathname().slice(1);
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
 
   return (
-    <Container lightMode={lightMode} isOpen={isOpen}>
+    <div
+      className={clsx(
+        "flex items-center text-base lg:text-2xl xl:text-3xl",
+        "max-[425px]:flex-col max-[425px]:justify-center max-[425px]:items-center max-[425px]:absolute max-[425px]:top-0 max-[425px]:right-0 max-[425px]:w-[80vw] max-[425px]:h-screen",
+        isOpen
+          ? "animate-[slideInRight_0.5s_cubic-bezier(0.25,0.46,0.45,0.94)_both]"
+          : "animate-[slideOutRight_0.5s_cubic-bezier(0.25,0.46,0.45,0.94)_both]",
+        isDark
+          ? "max-[425px]:bg-gradient-to-r max-[425px]:from-transparent max-[425px]:via-gray-900/90 max-[425px]:to-gray-900 text-white"
+          : "text-black max-[425px]:bg-gradient-to-r max-[425px]:from-transparent max-[425px]:via-gray-300/90 max-[425px]:to-gray-300"
+      )}
+    >
       {LINKLIST.filter((label) => {
-        if (label.toLocaleLowerCase() === pathname) {
+        if (label.toLowerCase() === pathname) {
           return false;
         }
         return true;
-      }).map((label) => {
+      }).map((label, index) => {
         return (
           <MenuItem
+            key={index}
             to={label.toLowerCase()}
             label={label}
             handleOpen={() => {
-              isMobile && setIsOpen(false);
+              if (isMobile) {
+                setIsOpen(false);
+              }
             }}
           />
         );
       })}
-      {/* <Toggle checked={lightMode} onToggle={toggleTheme} /> */}
-    </Container>
+    </div>
   );
 }
-
-const darkThemeStyles = css`
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #191919e6, #191919, #191919, #191919);
-`;
-
-const lightThemeStyles = css`
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #a3a3a3e6, #a3a3a3, #a3a3a3, #a3a3a3);
-`;
-
-const slideInRight = keyframes`
-  0% {
-    transform: translateX(1000px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-`;
-
-const slideOutRight = keyframes`
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(100%);
-  }
-`;
-
-const Container = styled.div<{ lightMode: boolean; isOpen: boolean }>`
-  display: flex;
-  align-items: center;
-  font-size: 1rem;
-  ${(props) =>
-    props.isOpen
-      ? css`
-          animation: ${slideInRight} 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-        `
-      : css`
-          animation: ${slideOutRight} 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-        `}
-  @media (max-width: 425px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 80vw;
-    height: 100vh;
-    ${({ lightMode }) => (lightMode ? darkThemeStyles : lightThemeStyles)}
-  }
-  @media (min-width: 990px) {
-    font-size: 2rem;
-  }
-  @media (min-width: 1325px) {
-    font-size: 3rem;
-  }
-`;

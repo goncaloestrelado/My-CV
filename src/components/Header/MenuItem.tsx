@@ -1,5 +1,7 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+"use client";
+
+import Link from "next/link";
+import { useTheme } from "@/context/ThemeContext";
 
 interface Props {
   to: string;
@@ -8,26 +10,17 @@ interface Props {
 }
 
 export default function MenuItem({ to, label, handleOpen }: Props) {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
   return (
-    <NavLink to={`${to}`} onClick={handleOpen}>
-      <h1>{label}</h1>
-    </NavLink>
+    <Link
+      href={`/${to}`}
+      onClick={handleOpen}
+      className={`mx-7 max-[425px]:text-6xl hover:underline hover:decoration-solid hover:decoration-[3px] ${
+        isDark ? "text-white hover:decoration-white" : "text-black hover:decoration-black"
+      }`}
+    >
+      <h1 className="font-anta font-light">{label}</h1>
+    </Link>
   );
 }
-
-const NavLink = styled(Link)`
-  margin: 0 30px;
-  &:hover {
-    text-decoration-line: underline;
-    text-decoration-style: "solid";
-    text-decoration-color: rgba(255, 255, 255, 1);
-    text-decoration-thickness: 3px;
-  }
-  &.active {
-    font-weight: bold;
-    color: yellow;
-  }
-  @media (max-width: 425px) {
-    font-size: 4rem;
-  }
-`;

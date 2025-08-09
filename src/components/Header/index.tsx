@@ -1,56 +1,33 @@
-import styled, { css } from "styled-components";
-import { Link } from "react-router-dom";
-import Menu from "./Menu";
-import { useContext } from "react";
-import { ThemeContext } from "../../context/ThemeContext";
+"use client";
+
+import Link from "next/link";
+import { default as Menu } from "./Menu";
+import { useTheme } from "@/context/ThemeContext";
+import { ThemeSwitch } from "./ThemeSwitch";
 
 export function Header() {
-  const { lightMode } = useContext(ThemeContext);
+  const { theme, toggleTheme } = useTheme();
+  const isDark = theme === "dark";
   return (
-    <HeaderContainer lightMode={lightMode}>
-      <Logo to="/">
-        <h1>Gonçalo Estrelado</h1>
-      </Logo>
-      <Menu />
-    </HeaderContainer>
+    <nav
+      className={
+        isDark
+          ? "flex items-center justify-between h-20 px-5 sticky top-0 z-10 bg-gradient-to-b from-black/85 to-transparent text-white"
+          : "flex items-center justify-between h-20 px-5 sticky top-0 z-10 bg-gradient-to-b from-gray-500/85 to-transparent text-black shadow-md"
+      }
+    >
+      <Link
+        href="/"
+        className={
+          isDark ? "text-base sm:text-2xl lg:text-4xl" : "text-base sm:text-2xl lg:text-4xl text-black drop-shadow"
+        }
+      >
+        <h1 className="font-anta font-light leading-none">Gonçalo Estrelado</h1>
+      </Link>
+      <div className="flex items-center gap-4">
+        <ThemeSwitch checked={isDark} onChange={toggleTheme} />
+        <Menu />
+      </div>
+    </nav>
   );
 }
-
-const lightThemeStyles = css`
-  background-color: rgb(141, 141, 141);
-  background: linear-gradient(180deg, rgba(90, 90, 90, 0.85) 0%, rgba(90, 90, 90, 0) 100%);
-  a,
-  svg {
-    color: black;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-  }
-`;
-
-const darkThemeStyles = css`
-  background-color: rgb(0, 0, 0);
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
-`;
-
-const HeaderContainer = styled.nav<{ lightMode: boolean }>`
-  ${({ lightMode }) => (lightMode ? darkThemeStyles : lightThemeStyles)}
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 50px;
-  height: 80px;
-  padding: 0 20px;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-`;
-
-const Logo = styled(Link)`
-  font-weight: 300;
-  font-size: 1rem;
-  @media (min-width: 542px) {
-    font-size: 2rem;
-  }
-  @media (min-width: 815px) {
-    font-size: 4rem;
-  }
-`;

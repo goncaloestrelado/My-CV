@@ -1,66 +1,49 @@
-import { Outlet, useLocation } from "react-router-dom";
-import styled, { css } from "styled-components";
-import { Footer } from "../Footer";
-import { Header } from "../Header";
-import { useContext } from "react";
-import { ThemeContext } from "../../context/ThemeContext";
+"use client";
 
-export function Layout() {
-  const location = useLocation();
-  const pathname = location.pathname;
-  const { lightMode } = useContext(ThemeContext);
-  return (
-    <Container lightMode={lightMode}>
-      {pathname === "/" ? null : <Header />}
-      <OutletWrapper>
-        <Outlet />
-      </OutletWrapper>
-      <Footer />
-    </Container>
-  );
+import { clsx } from "clsx";
+import { Header } from "../Header";
+import { useTheme } from "@/context/ThemeContext";
+
+interface LayoutProps {
+  children: React.ReactNode;
+  showHeader?: boolean;
 }
 
-const lightThemeStyles = css`
-  position: absolute;
-  top: 0;
-  width: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url("/images/block-texture-white.gif");
-  background-size: 100%;
-  background-repeat: repeat;
-  background-attachment: fixed;
-`;
+export function Layout({ children, showHeader = true }: LayoutProps) {
+  const { theme } = useTheme();
 
-const darkThemeStyles = css`
-  position: absolute;
-  top: 0;
-  width: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("/images/block-texture.gif");
-  background-size: 100%;
-  background-repeat: repeat;
-  background-attachment: fixed;
-`;
+  const isDark = theme === "dark";
+  const backgroundStyle = isDark
+    ? {
+        background: "linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/block-texture.gif')",
+        backgroundSize: "100%",
+        backgroundRepeat: "repeat",
+        backgroundAttachment: "fixed",
+      }
+    : {
+        background: "linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('/images/block-texture-white.gif')",
+        backgroundSize: "100%",
+        backgroundRepeat: "repeat",
+        backgroundAttachment: "fixed",
+      };
 
-const OutletWrapper = styled.main`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  min-width: 100vw;
-  min-height: 100vh;
-`;
-
-const Container = styled.section<{ lightMode: boolean }>`
-  ${({ lightMode }) => (lightMode ? darkThemeStyles : lightThemeStyles)}
-  ${OutletWrapper} {
-    ${({ lightMode }) => css`
-      color: ${lightMode ? "white" : "black"};
-    `}
-  }
-  height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
-  @media (min-width: 768px) {
-    height: 200vh;
-  }
-`;
+  return (
+    <section
+      style={backgroundStyle}
+      className={clsx(
+        "min-h-screen w-full overflow-y-auto overflow-x-hidden flex flex-col",
+        isDark ? "text-white" : "text-black"
+      )}
+    >
+      {showHeader && <Header />}
+      <main
+        className={clsx(
+          "flex-1 flex justify-center items-center w-full",
+          showHeader ? "min-h-[calc(100vh-5rem)]" : "min-h-screen"
+        )}
+      >
+        {children}
+      </main>
+    </section>
+  );
+}

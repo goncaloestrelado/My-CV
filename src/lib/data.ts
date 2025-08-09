@@ -1,4 +1,4 @@
-import { ProjectType } from "./../utils/types";
+import { ProjectType } from "../utils/types";
 
 export const PROJECTS: Array<ProjectType> = [
   {
@@ -89,19 +89,6 @@ export const PROJECTS: Array<ProjectType> = [
     github: "https://github.com/goncaloestrelado/data-dashboard",
     live: "https://cryptodatadashboard.netlify.app/",
   },
-  /* {
-    dateSince: "2022-08-26T22:38:12",
-    isFinished: false,
-    image: "/images/24grind-frontPic.png",
-    name: "24Grind",
-    subTitle: "Every activity's more fun now with friends",
-    description:
-      "24Grind is a social self-care app that allows users to create, share, and discover self-care activities such as physical, reading, mental lab, and domestic tasks. Users can create an account, log in, create activities, share them with others, rate, and provide feedback. They can also join or create groups, set reminders, track progress, and connect with others. The app has a simple interface, clean design, easy navigation and includes gamification aspects. Note: The app is still in development so not every functionality is currently available in the app.",
-    techs: ["ReactJS", "Typescript", "Tailwind", "Axios", "React-router-dom", "Formik"],
-    github: "https://github.com/ST4R20RD/24Grind-frontend",
-    live: "https://24grind.netlify.app/",
-    warning: "BE not currently working, we are actively working on a fix.",
-  }, */
   {
     id: "l2k9r",
     dateSince: "2022-11-15T16:54:46",
@@ -165,74 +152,13 @@ export const PROJECTS: Array<ProjectType> = [
     github: "https://github.com/ST4R20RD/whatsapp-clone",
     live: "https://whatsgood-gnestrelado.netlify.app/",
   },
-  /* {
-    id: "a3b1d",
-    dateSince: "2022-04-09T11:20:48",
-    isFinished: true,
-    thumbnail: "/images/nani-frontPic.png",
-    title: "Nani",
-    subTitle: "All of animes in one place",
-    description:
-      "Teaming up for our final course project, my colleague and I, both Front End Developers, aim to build a responsive website for anime enthusiasts. It offers the latest anime updates, synopses, trailers, reviews, and social interaction. The site ensures seamless browsing across all devices, prioritizing user-friendliness, speed, and accessibility. We'll also optimize it for search engines to increase visibility. This project showcases our skills in creating a niche-focused, feature-rich anime platform.",
-    techs: [
-      {
-        name: "ReactJS",
-        color: "#61DAFB",
-        link: "https://reactjs.org/",
-      },
-      {
-        name: "SCSS",
-        color: "#CC6699",
-        link: "https://sass-lang.com/",
-      },
-      {
-        name: "Axios",
-        color: "#0078D4",
-        link: "https://axios-http.com/",
-      },
-      {
-        name: "React-router-dom",
-        color: "#CA4245",
-        link: "https://reactrouter.com/web/guides/quick-start",
-      },
-      {
-        name: "Socket.io",
-        color: "#25C2A0",
-        link: "https://socket.io/",
-      },
-      {
-        name: "Google-Login",
-        color: "#4285F4",
-        link: "https://developers.google.com/identity/sign-in/web/sign-in",
-      },
-      {
-        name: "Recaptcha",
-        color: "#4285F4",
-        link: "https://developers.google.com/recaptcha",
-      },
-    ],
-    github: "https://github.com/RaAlMer/Nani-frontend",
-  }, */
-  /* {
-    dateSince: "2021-12-14T17:37:19",
-    isFinished: true,
-    image: "/images/penalty-frontPic.png",
-    name: "Penalty Shootout",
-    subTitle: "Simple game for quick fun with friends",
-    description:
-      "Put your luck to the test with our simple yet exciting Penalty Shootout game. Players take turns attempting to score against the opposing team's goalkeeper, with the pressure of a one-on-one showdown. With easy-to-use controls and a straightforward gameplay, this game is perfect for players of all ages and skill levels. Test your luck and see if you have what it takes to come out on top!",
-    techs: ["HTML", "Canvas"],
-    github: "https://github.com/ST4R20RD/Penalty-Shootout",
-    live: "https://penalty-shootout.netlify.app/",
-  },
- */
   {
-    id: "cof-2025", // Unique identifier
-    dateSince: "2025-01-01T00:00:00", // Estimated project start date
-    isFinished: true, // Project appears complete with full functionality
-    thumbnail: "/images/circleOfFifths-thumb.png", // Using the React logo from public folder
-    title: "Circle of Fifths", // From package.json and README
-    subTitle: "Interactive Music Theory Explorer", // Based on the app's functionality
+    id: "cof-2025",
+    dateSince: "2025-01-01T00:00:00",
+    isFinished: true,
+    thumbnail: "/images/circleOfFifths-thumb.png",
+    title: "Circle of Fifths",
+    subTitle: "Interactive Music Theory Explorer",
     description:
       "An interactive Circle of Fifths application built with React that helps musicians explore scales and keys through an intuitive interface. Features clickable key selection, scale visualization with proper sharps and flats, educational tools for understanding musical relationships, and responsive design for all devices.",
     techs: [
@@ -262,7 +188,7 @@ export const PROJECTS: Array<ProjectType> = [
         link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
       },
     ],
-    github: "https://github.com/ST4R20RD/proj-acordes", // From package.json repository field
+    github: "https://github.com/ST4R20RD/proj-acordes",
     live: "https://circlefifths.netlify.app/",
   },
 ];
