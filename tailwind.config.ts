@@ -160,8 +160,10 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        raleway: ["Raleway", "sans-serif"],
-        anta: ["Anta", "sans-serif"],
+        // Map utilities to next/font injected CSS variables (see lib/fonts.ts)
+        raleway: ["var(--font-raleway)", "sans-serif"],
+        anta: ["var(--font-anta)", "sans-serif"],
+        modernTimes: ["var(--font-modernTimes)", "var(--font-anta)", "sans-serif"],
       },
     },
   },

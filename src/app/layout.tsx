@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { anta, raleway } from "@/lib/fonts";
+import { allFontVariables } from "@/lib/fonts";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { Footer } from "@/components";
 
@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${raleway.variable} ${anta.variable} font-raleway`}>
+    <html lang="en" suppressHydrationWarning className={`${allFontVariables} font-raleway`}>
       <body className="transition-colors duration-300" suppressHydrationWarning>
         <ThemeProvider>
           <main>{children}</main>

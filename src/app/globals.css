@@ -4,14 +4,7 @@
 
 /* Anta loaded via next/font (see lib/fonts.ts) */
 
-/* Local custom font (TAModernTimes) migrated from CRA public/fonts */
-@font-face {
-  font-family: "TAModernTimes";
-  src: url("/fonts/tural-alisoy-tamoderntimes/TAModernTimes-RoundedExtLt.otf") format("opentype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
+/* Local custom font now loaded via next/font/local (see lib/fonts.ts) */
 
 @layer base {
   h1 {
@@ -19,7 +12,7 @@
     font-weight: 400;
   }
   .font-modernTimes {
-    font-family: "TAModernTimes", var(--font-anta), sans-serif;
+    font-family: var(--font-modernTimes), var(--font-anta), sans-serif;
     font-weight: 300;
   }
 }
