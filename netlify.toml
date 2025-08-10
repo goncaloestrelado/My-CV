@@ -6,13 +6,12 @@
   NODE_VERSION = "20"
   NEXT_TELEMETRY_DISABLED = "1"
 
-# Enable Next.js caching for faster subsequent builds
 [functions]
   node_bundler = "esbuild"
 
-# Redirect all requests to Next.js handler (optional if using Next Runtime automatically)
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  force = false
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Notes:
+# - The Next.js plugin handles all routing (including dynamic routes & SSR) so no manual catch-all redirect is needed.
+# - Publish directory should remain .next for the plugin to process server output.
