@@ -1,0 +1,6 @@
+# Disable caching for all crawler bots on all pages
+/*
+  Cache-Control: no-cache, no-store, must-revalidate
+  Pragma: no-cache
+  Expires: 0
+  X-Robots-Tag: noarchive
