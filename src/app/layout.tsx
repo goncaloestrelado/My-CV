@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/context/ThemeContext";
 import { Footer } from "@/components";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://goncalo-estrelado.netlify.app"),
   title: "Gonçalo Estrelado Portfolio",
   description:
     "Welcome to Gonçalo Estrelado's professional portfolio. Discover my expertise in web development, software engineering, and innovative digital solutions. Explore my projects, skills, and experience in creating modern, user-friendly applications.",
@@ -14,7 +15,15 @@ export const metadata: Metadata = {
     title: "Gonçalo Estrelado Portfolio",
     description:
       "Welcome to Gonçalo Estrelado's professional portfolio. Discover my expertise in web development, software engineering, and innovative digital solutions. Explore my projects, skills, and experience in creating modern, user-friendly applications.",
-    images: ["https://goncalo-estrelado.netlify.app/preview.jpg"],
+    images: [
+      {
+        url: "https://goncalo-estrelado.netlify.app/images/preview.png",
+        width: 1200,
+        height: 630,
+        alt: "Preview of Gonçalo Estrelado's portfolio website",
+        type: "image/png",
+      },
+    ],
     url: "https://goncalo-estrelado.netlify.app",
     type: "website",
   },

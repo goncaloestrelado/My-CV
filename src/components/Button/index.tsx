@@ -15,11 +15,6 @@ export function Button({ children, href, variant = "primary", className, onClick
   const baseClasses =
     "inline-flex relative overflow-hidden p-px h-12 rounded-full hover:outline-none hover:ring-2 hover:ring-slate-400 hover:ring-offset-2 hover:ring-offset-slate-50 transition-all duration-300";
 
-  const variantClasses = {
-    primary: "bg-gradient-to-r from-blue-500 to-purple-600",
-    outline: "border-2 border-gray-600 bg-transparent hover:bg-gray-800",
-  };
-
   const innerClasses = {
     primary:
       "inline-flex justify-center items-center w-full h-full cursor-pointer rounded-full bg-slate-950 px-8 py-1 text-sm font-medium text-white backdrop-blur-3xl",
