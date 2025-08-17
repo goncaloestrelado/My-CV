@@ -4,3 +4,7 @@
   Pragma: no-cache
   Expires: 0
   X-Robots-Tag: noarchive
+
+# Ensure correct content type for OG image
+/images/preview.png
+  Content-Type: image/png
